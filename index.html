@@ -6,6 +6,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>John Miller</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -16,7 +20,7 @@
     }
 
     .top-bar {
-      width: 98%;
+      width: 100%;
       background-color: #185056;
       display: flex;
       align-items: center;
@@ -28,7 +32,7 @@
     }
 
     .main-content {
-      width: 98%;
+      width: 100%;
       margin: 0 auto;
       padding: 0 15px;
       flex: 1;
@@ -39,34 +43,35 @@
     .container {
       display: flex;
       flex-direction: column;
-      width: 98%;
+      width: 100%;
       border: 1px solid #ccc;
       padding: 20px;
-      box-sizing: border-box;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       background-color: #F6FAFD;
     }
 
+    .left, .right {
+      width: 100%;
+    }
+
     .left {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 20px;
     }
 
     .left img {
       max-width: 100%;
-      max-height: 100%;
+      height: auto;
       border-radius: 10px;
     }
 
     .right {
-      flex: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 20px;
       text-align: center;
     }
 
@@ -144,7 +149,7 @@
     }
 
     .footer {
-      width: 98%;
+      width: 100%;
       background-color: #132527;
       display: flex;
       align-items: center;
@@ -164,8 +169,31 @@
         flex-direction: row;
       }
 
+      .left, .right {
+        width: 50%;
+      }
+
       .right {
         padding-left: 20px;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-bar {
+        font-size: 1.5em;
+        padding: 1vh 0;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .buttons a,
+      .buttons button {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -173,22 +201,22 @@
 </head>
 <body>
   <div class="top-bar">John Miller</div>
-
   <div class="main-content">
     <div class="container">
       <div class="left">
         <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/s5p-cropped-miller.jpg">
-        <div class="right">
+      </div>
+      <div class="right">
         <p class="highlight">CompTIA A+, Net+, Security+ Certified Technician</p>
         <p class="description">
           Passionate, fast-learning, self-taught IT technician focusing on networking and security related principles. Deeply interested in and committed to the field of information technology with a strong foundation of knowledge through self-directed learning and hands-on experience.
         </p>
         <div class="buttons">
-            <a href="mailto:jm@johnmiller.tech?subject=Reaching Out From johnmiller.tech Website" class="email">Click to Email Me</a>
+          <a href="mailto:jm@johnmiller.tech?subject=Reaching Out From johnmiller.tech Website" class="email">Click to Email Me</a>
             <a href="https://www.linkedin.com/in/johnrmiller65535" class="linkedin">Click to Visit Me on LinkedIn</a>
             <a href="https://t.ly/-sPe" class="resume">Click to View My Resume</a>
             <button class="reveal" onclick="togglePhone()">Click to Show My Phone Number</button>
-            </div>
+        </div>
         <div class="phone">
           <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/j7i-pnum.png" alt="Phone Number" id="phoneImage">
         </div>
@@ -196,8 +224,7 @@
         <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/aplus.png">
         <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/netplus.png">
         <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/secplus.png">
-  </div>
-  </div>
+          </div>
   </div>
   </div>
   </div>
