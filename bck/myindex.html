@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>John Miller</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #185056;
+    }
+
+    .top-bar {
+      width: 100%;
+      background-color: #185056;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 2vh 0;
+    }
+
+    .main-content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #F6FAFD;
+    }
+
+    .left, .right {
+      width: 100%;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .right p {
+      margin: 0 0 10px;
+    }
+
+    .right .highlight {
+      font-size: clamp(1.5rem, 2.5vw, 3em);
+      font-weight: bold;
+    }
+
+    .right .description {
+      font-size: clamp(1rem, 2vw, 2em);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .buttons a,
+    .buttons button {
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .buttons a {
+      background-color: #0073b1;
+    }
+
+    .buttons a.email {
+      background-color: #d14836;
+    }
+
+    .buttons a.resume {
+      background-color: #4CAF50;
+    }
+
+    .buttons button.reveal {
+      background-color: #FE9900;
+    }
+
+    .phone {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .phone img {
+      display: none;
+      margin: 0 auto;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px auto;
+      flex-wrap: wrap;
+    }
+
+    .image-row img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .footer {
+      width: 100%;
+      background-color: #132527;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1em;
+      padding: 1em;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+      }
+
+      .left, .right {
+        width: 50%;
+      }
+
+      .right {
+        padding-left: 20px;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-bar {
+        font-size: 1.5em;
+        padding: 1vh 0;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .buttons a,
+      .buttons button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jrmmages/favicon.ico">
+</head>
+<body>
+  <div class="top-bar">John Miller</div>
+  <div class="main-content">
+    <div class="container">
+      <div class="left">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/s5p-cropped-miller.jpg">
+      </div>
+      <div class="right">
+        <p class="highlight">CompTIA A+, Net+, Security+ Certified Technician</p>
+        <p class="description">
+          Passionate, fast-learning, self-taught IT technician focusing on networking and security related principles. Deeply interested in and committed to the field of information technology with a strong foundation of knowledge through self-directed learning and hands-on experience.
+        </p>
+        <div class="buttons">
+          <a href="mailto:jm@johnmiller.tech?subject=Reaching Out From johnmiller.tech Website" class="email">Click to Email Me</a>
+            <a href="https://www.linkedin.com/in/johnrmiller65535" class="linkedin">Click to Visit Me on LinkedIn</a>
+            <a href="https://t.ly/-sPe" class="resume">Click to View My Resume</a>
+            <button class="reveal" onclick="togglePhone()">Click to Show My Phone Number</button>
+        </div>
+        <div class="phone">
+          <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/j7i-pnum.png" alt="Phone Number" id="phoneImage">
+        </div>
+        <div class="image-row">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/aplus.png">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/netplus.png">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/secplus.png">
+          </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="footer">
+    ©&nbsp;<span id="year"></span>&nbsp;John Miller. Built by&nbsp;<a href="#">Daugherty Tech Solutions.</a>
+  </div>
+
+  <script>
+        function togglePhone() {
+            const phoneImage = document.getElementById('phoneImage');
+            if (phoneImage.style.display === 'none' || phoneImage.style.display === '') {
+                phoneImage.style.display = 'block';
+            } else {
+                phoneImage.style.display = 'none';
+            }
+        }
+        // Set the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
