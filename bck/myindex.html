@@ -1,173 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Miller</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-color: #185056; /* Set background color */
-        }
-        .top-bar {
-            width: 100%;
-            height: 20vh; /* 1/5 of the screen height */
-            background-color: #185056; /* Top bar background color */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 70vh; /* Remaining 7/10 of the screen height */
-            border: 1px solid #ccc;
-            padding: 20px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #F6FAFD; /* Container Polar White */
-        }
-        .left {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .left img {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 10px;
-        }
-        .right {
-            flex: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 20px;
-            text-align: center; /* Center text in the right section */
-        }
-        .right p {
-            margin: 0 0 10px;
-        }
-        .right .highlight {
-            font-size: 3em;
-            font-weight: bold;
-        }
-        .right .description {
-            font-size: 2em;
-        }
-        .buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-            justify-content: center; /* Center buttons horizontally */
-        }
-        .buttons a, .buttons button {
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .buttons a {
-            background-color: #0073b1; /* LinkedIn blue */
-        }
-        .buttons a.email {
-            background-color: #d14836; /* Gmail red */
-        }
-        .buttons a.resume {
-            background-color: #4CAF50; /* Green */
-        }
-        .buttons button.reveal {
-            background-color: #FE9900; /* Mustard yellow */
-        }
-        .phone {
-            margin-top: 10px;
-            text-align: center; /* Center phone image */
-        }
-        .phone img {
-            display: none; /* Hide the image initially */
-            margin: 0 auto; /* Center the image */
-        }
-        .footer {
-            width: 100%;
-            height: 10vh; /* 1/10 of the screen height */
-            background-color: #132527; /* Footer background color */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1em;
-        }
-        .footer a {
-            color: white;
-            text-decoration: underline;
-        }
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-            }
-            .right {
-                padding-left: 20px;
-            }
-        }
-        @media (max-width: 767px) {
-            .top-bar {
-                height: 15vh; /* Adjust top bar height for smaller screens */
-                font-size: 1.5em;
-            }
-            .container {
-                height: 75vh; /* Adjust container height for smaller screens */
-            }
-            .right .highlight {
-                font-size: 2em;
-            }
-            .right .description {
-                font-size: 1.5em;
-            }
-            .buttons a, .buttons button {
-                padding: 8px 12px;
-            }
-        }
-    </style>
-<link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>John Miller</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #185056;
+    }
+
+    .top-bar {
+      width: 98%;
+      background-color: #185056;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 2vh 0;
+    }
+
+    .main-content {
+      width: 98%;
+      margin: 0 auto;
+      padding: 0 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 98%;
+      border: 1px solid #ccc;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #F6FAFD;
+    }
+
+    .left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+
+    .right {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 20px;
+      text-align: center;
+    }
+
+    .right p {
+      margin: 0 0 10px;
+    }
+
+    .right .highlight {
+      font-size: clamp(1.5rem, 2.5vw, 3em);
+      font-weight: bold;
+    }
+
+    .right .description {
+      font-size: clamp(1rem, 2vw, 2em);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .buttons a,
+    .buttons button {
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .buttons a {
+      background-color: #0073b1;
+    }
+
+    .buttons a.email {
+      background-color: #d14836;
+    }
+
+    .buttons a.resume {
+      background-color: #4CAF50;
+    }
+
+    .buttons button.reveal {
+      background-color: #FE9900;
+    }
+
+    .phone {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .phone img {
+      display: none;
+      margin: 0 auto;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px auto;
+      flex-wrap: wrap;
+    }
+
+    .image-row img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .footer {
+      width: 98%;
+      background-color: #132527;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1em;
+      padding: 1em;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+      }
+
+      .right {
+        padding-left: 20px;
+      }
+    }
+  </style>
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jrmmages/favicon.ico">
 </head>
 <body>
-    <div class="top-bar">
-        John Miller
-    </div>
+  <div class="top-bar">John Miller</div>
+
+  <div class="main-content">
     <div class="container">
-        <div class="left">
-            <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/s5p-cropped-miller.jpg" alt="Your Picture">
-        </div>
+      <div class="left">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/s5p-cropped-miller.jpg">
         <div class="right">
-            <p class="highlight">CompTIA A+, Net+, Security+ Certified Technician</p>
-            <p class="description">Passionate, fast-learning, self-taught IT technician focusing on networking and security related principles. Deeply interested in and committed to the field of information technology with a strong foundation of knowledge through self-directed learning and hands-on experience.</p>
-            <div class="buttons">
-                <a href="mailto:jm@johnmiller.tech?subject=Reaching Out From johnmiller.tech Website" class="email">Click to Email Me</a>
-                <a href="https://www.linkedin.com/in/johnrmiller65535" class="linkedin">Click to Visit Me on LinkedIn</a>
-                <a href="https://t.ly/-sPe" class="resume">Click to View My Resume</a>
-                <button class="reveal" onclick="togglePhone()">Click to Show My Phone Number</button>
+        <p class="highlight">CompTIA A+, Net+, Security+ Certified Technician</p>
+        <p class="description">
+          Passionate, fast-learning, self-taught IT technician focusing on networking and security related principles. Deeply interested in and committed to the field of information technology with a strong foundation of knowledge through self-directed learning and hands-on experience.
+        </p>
+        <div class="buttons">
+            <a href="mailto:jm@johnmiller.tech?subject=Reaching Out From johnmiller.tech Website" class="email">Click to Email Me</a>
+            <a href="https://www.linkedin.com/in/johnrmiller65535" class="linkedin">Click to Visit Me on LinkedIn</a>
+            <a href="https://t.ly/-sPe" class="resume">Click to View My Resume</a>
+            <button class="reveal" onclick="togglePhone()">Click to Show My Phone Number</button>
             </div>
-            <div class="phone">
-                <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/j7i-pnum.png" alt="Phone Number" id="phoneImage">
-            </div>
+        <div class="phone">
+          <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/j7i-pnum.png" alt="Phone Number" id="phoneImage">
         </div>
-    </div>
-    <div class="footer">
-        ©&nbsp;<span id="year"></span>&nbsp;John Miller. Built by&nbsp;<a href="https://daughertytechsolutions.com">Daugherty Tech Solutions</a>
-    </div>
-    <script>
+        <div class="image-row">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/aplus.png">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/netplus.png">
+        <img src="https://raw.githubusercontent.com/jrmill25/jrmill.github.io/refs/heads/main/docs/assets/images/secplus.png">
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="footer">
+    ©&nbsp;<span id="year"></span>&nbsp;John Miller. Built by&nbsp;<a href="#">Daugherty Tech Solutions.</a>
+  </div>
+
+  <script>
         function togglePhone() {
             const phoneImage = document.getElementById('phoneImage');
             if (phoneImage.style.display === 'none' || phoneImage.style.display === '') {
